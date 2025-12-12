@@ -34,7 +34,7 @@ class UserController
     {
         $servername = "localhost";
         $username = "root";
-        $password = "";
+        $password = "root";
         $dbname = "mp0487_daemgame";
 
         try {
@@ -131,7 +131,7 @@ class UserController
         $_SESSION['user'] = $mail;
 
         // Get the icon correct for the user
-        $stmt = $this->conn->prepare("SELECT imagen FROM Usuario WHERE email = :mail");
+        $stmt = $this->conn->prepare("SELECT imagen FROM usuario WHERE email = :mail");
         $stmt->bindParam(':mail', $mail);
         $stmt->execute();
         $icon = $stmt->fetchColumn();
@@ -161,7 +161,7 @@ class UserController
         // Array that will save all the error of the functions that validate: name, surname, mail...
         $errors = [];
 
-        $file = "";
+        $file = $_POST["icon"];
         $name = $_POST['name'];
         $surname = $_POST['surname'];
         $mail = $_POST['username'];
@@ -175,8 +175,8 @@ class UserController
         }
 
         // Check if the email is already in the database
-        $stmt = $this->conn->prepare("SELECT Email FROM Usuario WHERE email = :mail");
-        $stmt->bindParam(':mail', $mail);
+        $stmt = $this->conn->prepare("SELECT Email FROM usuario WHERE Email = :mail");
+        $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
         $stmt->execute();
         // Check if the query have at least one result
         if ($stmt->fetch()) {
@@ -225,8 +225,8 @@ class UserController
 
         $hashPassword = password_hash($password, PASSWORD_DEFAULT);
         try {
-            $stmt = $this->conn->prepare("INSERT INTO Usuario (`Nombre`, `Apellido`, `Email`, `Password`, `Imagen`, `Administrador`) VALUES (:name, :surname, :mail, :password, :icon, :admin)");
-            $stmt->bindParam(':name', $name);
+            $stmt = $this->conn->prepare("INSERT INTO usuario (`Nombre`, `Apellido`, `Email`, `Contrasenya`, `Imagen`, `Administrador`) VALUES (:name, :surname, :mail, :password, :icon, :admin)");
+            $stmt->bindParam(':name', $name,);
             $stmt->bindParam(':surname', $surname);
             $stmt->bindParam(':mail', $mail);
             $stmt->bindParam(':password', $hashPassword);

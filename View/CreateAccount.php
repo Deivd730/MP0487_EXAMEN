@@ -36,7 +36,7 @@
                 <input type="text" name="surname" style="background-color:transparent;border: 0;" required placeholder="SURNAME" pattern="[A-Za-z\s]+" title="Only letters allowed">
             </div>
             <div class="email">
-                <input type="email" name="username" style="background-color:transparent;border: 0;" required placeholder="EMAIL">
+                <input type="email" name="mail" style="background-color:transparent;border: 0;" required placeholder="EMAIL">
             </div>
             <div class="password">
                 <input type="password" name="password" style="background-color:transparent;border: 0;" required placeholder="PASSWORD" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]+$">
