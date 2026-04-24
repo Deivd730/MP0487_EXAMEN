@@ -4,7 +4,7 @@ session_start();
 // Configuración de la base de datos
 $db_host = 'localhost';
 $db_user = 'root';
-$db_pass = '';
+$db_pass = 'root';
 $db_name = 'mp0487_knockoutzone';
 
 try {

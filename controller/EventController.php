@@ -3,10 +3,12 @@ session_start();
 
 class EventController
 {
+
+// David was here
     private $conn;
     private $db_host = 'localhost';
     private $db_user = 'root';
-    private $db_pass = '';
+    private $db_pass = 'root';
     private $db_name = 'mp0487_knockoutzone';
 
     public function __construct()
