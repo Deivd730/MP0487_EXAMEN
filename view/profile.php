@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "mp0487_knockoutzone");
+$conn = new mysqli("localhost", "root", "root", "mp0487_knockoutzone");
 $user = $_SESSION["user_name"];
 
 $query = $conn->prepare("SELECT * FROM users WHERE name = ?");

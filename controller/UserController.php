@@ -6,7 +6,7 @@ class UserController
     private $conn;
     private $servername = "localhost";
     private $username = "root";
-    private $password = "";
+    private $password = "root";
     private $dbname = "mp0487_knockoutzone";
 
     public function __construct()
